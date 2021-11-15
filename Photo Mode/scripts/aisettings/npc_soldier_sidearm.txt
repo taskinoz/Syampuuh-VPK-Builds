@@ -1,0 +1,6 @@
+#base "npc_soldier.txt"
+npc_soldier_sidearm
+{
+	
+	DefaultWeapon				"mp_weapon_semipistol"
+}

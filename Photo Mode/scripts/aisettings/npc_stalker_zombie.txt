@@ -1,0 +1,15 @@
+#base "npc_stalker.txt"
+npc_stalker_zombie
+{
+	SpawnLimping					1
+
+	
+
+	DefaultWeapon					""
+	Health							150
+
+	allowWalkAnims					0
+
+	leechAnimSet					spectre
+	leechMaxDist					150
+}

@@ -1,0 +1,8 @@
+#base "npc_titan.txt"
+npc_titan_mortar
+{
+	
+	WeaponCapacity				"Locked"
+	npc_titan_player_settings	"titan_atlas"
+	is_mortar_titan				1
+}

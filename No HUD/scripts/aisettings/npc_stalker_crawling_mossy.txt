@@ -1,0 +1,11 @@
+#base "npc_stalker_crawling.txt"
+npc_stalker_crawling_mossy
+{
+	
+
+	DefaultModelName				"models/robots/stalker/robot_stalker_mossy.mdl"
+	DefaultModelName_IMC			"models/robots/stalker/robot_stalker_mossy.mdl"
+	DefaultModelName_MIL			"models/robots/stalker/robot_stalker_mossy.mdl"
+
+	Health							150
+}
