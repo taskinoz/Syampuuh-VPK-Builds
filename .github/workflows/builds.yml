@@ -38,8 +38,8 @@ jobs:
           wget ${{ secrets.LOCATIONS }}/dir/englishclient_mp_common.bsp.pak000_dir.vpk
           mv *.vpk dir
           ./build.sh zip
-          - name: Create Release
-            uses: ncipollo/release-action@v1.8.6
-            with:
-              artifacts: "*.zip"
-              token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create Release
+        uses: ncipollo/release-action@v1.8.6
+        with:
+          artifacts: "*.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
