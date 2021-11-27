@@ -37,6 +37,7 @@ jobs:
           wget ${{ secrets.LOCATIONS }}/dir/englishclient_frontend.bsp.pak000_dir.vpk
           wget ${{ secrets.LOCATIONS }}/dir/englishclient_mp_common.bsp.pak000_dir.vpk
           mv *.vpk dir
+          chmod +x ./build.sh
           ./build.sh zip
       - name: Create Release
         uses: ncipollo/release-action@v1.8.6
