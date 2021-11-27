@@ -4,7 +4,6 @@ name: VPK Builds
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow when a tag is added
   push:
     tags:
       - '*'
