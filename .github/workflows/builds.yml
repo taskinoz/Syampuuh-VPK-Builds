@@ -1,0 +1,45 @@
+# This is a basic workflow to help you get started with Actions
+
+name: VPK Builds
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow when a tag is added
+  push:
+    tags:
+      - '*'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Setup tools
+          sudo apt install wget zip
+          echo Download RSPNVPK
+          wget -c $(curl -s https://api.github.com/repos/taskinoz/RSPNVPK/releases/latest | grep -o "http.*tar.gz")
+          tar -xf linux-x64.tar.gz
+          echo Download original _dir VPK\'s
+          mkdir dir
+          wget ${{ secrets.LOCATIONS }}/dir/englishclient_frontend.bsp.pak000_dir.vpk
+          wget ${{ secrets.LOCATIONS }}/dir/englishclient_mp_common.bsp.pak000_dir.vpk
+          mv *.vpk dir
+          ./build.sh zip
+          - name: Create Release
+            uses: ncipollo/release-action@v1.8.6
+            with:
+              artifacts: "*.zip"
+              token: ${{ secrets.GITHUB_TOKEN }}
