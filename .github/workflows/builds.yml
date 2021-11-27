@@ -40,7 +40,7 @@ jobs:
           chmod +x ./build.sh
           ./build.sh zip
       - name: Create Release
-        uses: ncipollo/release-action@v1.8.6
+        uses: ncipollo/release-action@v1
         with:
-          artifacts: "*.zip"
+          artifacts: "exports/*.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
