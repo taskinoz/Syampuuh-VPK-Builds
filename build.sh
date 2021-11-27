@@ -19,4 +19,8 @@ do
    cp "./dir/englishclient_${vpks[$i]}.bsp.pak000_dir.vpk" ./
    RSPNVPK "englishclient_${vpks[$i]}.bsp.pak000_dir.vpk" -d ${dirs[$i]} -s
    mv ./*.vpk "export/${dirs[$i]}"
+   if [ "$1" = "zip" ]
+   then
+     zip -r "export/${dirs[$i]}.zip" "export/${dirs[$i]}"
+   fi
 done
