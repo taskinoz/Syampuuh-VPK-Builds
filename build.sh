@@ -7,8 +7,9 @@
 
 dirs=("Brutal-Titanfall" "Brutal-Titanfall-2" "Englist-Text-Japan-Subs" "Improved-Crosshairs" "Improved-Sunflares" "No-HUD" "Photo-Mode" "Pilot-Speedometer")
 vpks=("frontend" "frontend" "frontend" "mp_common" "frontend" "mp_common" "mp_common" "mp_common")
-
+echo Before MKDIR
 mkdir "export"
+echo After MKDIR
 
 for i in 0 1 2 3 4 5 6 7
 do
@@ -17,7 +18,7 @@ do
 
    mkdir "export/${dirs[$i]}"
    cp "./dir/englishclient_${vpks[$i]}.bsp.pak000_dir.vpk" ./
-   RSPNVPK "englishclient_${vpks[$i]}.bsp.pak000_dir.vpk" -d ${dirs[$i]} -s
+   ./RSPNVPK "englishclient_${vpks[$i]}.bsp.pak000_dir.vpk" -d ${dirs[$i]} -s
    mv ./*.vpk "export/${dirs[$i]}"
    if [ "$1" = "zip" ]
    then
