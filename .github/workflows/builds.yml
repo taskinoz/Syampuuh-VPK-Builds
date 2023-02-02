@@ -33,8 +33,8 @@ jobs:
           tar -xf linux-x64.tar.gz
           echo Download original _dir VPK\'s
           mkdir dir
-          wget ${{ secrets.LOCATIONS }}/dir/englishclient_frontend.bsp.pak000_dir.vpk
-          wget ${{ secrets.LOCATIONS }}/dir/englishclient_mp_common.bsp.pak000_dir.vpk
+          wget ${{ secrets.LOCATIONS }}/pc/englishclient_frontend.bsp.pak000_dir.vpk
+          wget ${{ secrets.LOCATIONS }}/pc/englishclient_mp_common.bsp.pak000_dir.vpk
           mv *.vpk dir
           chmod +x ./build.sh
           ./build.sh zip
